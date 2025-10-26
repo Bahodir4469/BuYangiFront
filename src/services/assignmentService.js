@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://23c6f838d91b.ngrok-free.app/api";
+const BASE_URL = "https://796325cefab3.ngrok-free.app/api";
 
 // Tokenni olish
 const getAuthHeaders = () => {
