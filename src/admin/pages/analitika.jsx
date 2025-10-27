@@ -22,7 +22,7 @@ export default function Analitika() {
     const token = localStorage.getItem("adminToken");
 
     axios
-      .get("http://localhost:8080/api/users", {
+      .get("https://796325cefab3.ngrok-free.app/api/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -44,7 +44,7 @@ export default function Analitika() {
   const confirmDelete = async () => {
     const token = localStorage.getItem("adminToken");
     try {
-      await axios.delete(`http://localhost:8080/api/users/${selectedUser.id}`, {
+      await axios.delete(`https://796325cefab3.ngrok-free.app/api/users/${selectedUser.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(users.filter((u) => u.id !== selectedUser.id));
@@ -69,7 +69,7 @@ export default function Analitika() {
     const token = localStorage.getItem("adminToken");
     try {
       const res = await axios.put(
-        `http://localhost:8080/api/users/${selectedUser.id}`,
+        `https://796325cefab3.ngrok-free.app/api/users/${selectedUser.id}`,
         editedUser,
         {
           headers: { Authorization: `Bearer ${token}` },

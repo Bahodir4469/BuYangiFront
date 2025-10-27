@@ -10,7 +10,7 @@ const Articles = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/articles");
+        const res = await axios.get("https://796325cefab3.ngrok-free.app/api/articles");
         setArticles(res.data);
       } catch (err) {
         console.error("Maqolalarni olishda xatolik:", err);

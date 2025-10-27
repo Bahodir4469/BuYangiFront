@@ -15,7 +15,7 @@ const CoursePage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch(`http://localhost:8080/api/lessons/${courseId}`, {
+    fetch(`https://796325cefab3.ngrok-free.app/api/lessons/${courseId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },

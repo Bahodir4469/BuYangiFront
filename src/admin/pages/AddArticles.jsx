@@ -21,7 +21,7 @@ export default function AdminArticleForm() {
         try {
           const token = localStorage.getItem("adminToken");
           const res = await axios.get(
-            `http://localhost:8080/api/articles/${id}`,
+            `https://796325cefab3.ngrok-free.app/api/articles/${id}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -48,14 +48,14 @@ export default function AdminArticleForm() {
     try {
       if (isEdit) {
         await axios.put(
-          `http://localhost:8080/api/articles/${id}`,
+          `https://796325cefab3.ngrok-free.app/api/articles/${id}`,
           articleData,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
       } else {
-        await axios.post("http://localhost:8080/api/articles", articleData, {
+        await axios.post("https://796325cefab3.ngrok-free.app/api/articles", articleData, {
           headers: { Authorization: `Bearer ${token}` },
         });
       }

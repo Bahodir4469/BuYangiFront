@@ -13,7 +13,7 @@ export default function AdminArticles() {
 
   const fetchArticles = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/articles", {
+      const res = await axios.get("https://796325cefab3.ngrok-free.app/api/articles", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setArticles(res.data);
@@ -34,7 +34,7 @@ export default function AdminArticles() {
   const handleDelete = async () => {
     if (!deleteId) return;
     try {
-      await axios.delete(`http://localhost:8080/api/articles/${deleteId}`, {
+      await axios.delete(`https://796325cefab3.ngrok-free.app/api/articles/${deleteId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setShowModal(false);

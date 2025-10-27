@@ -41,7 +41,7 @@ export default function TestFormPage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("http://localhost:8080/api/lessons", {
+    fetch("https://796325cefab3.ngrok-free.app/api/lessons", {
       headers: {
         Authorization: `Bearer ${token}`,
       },

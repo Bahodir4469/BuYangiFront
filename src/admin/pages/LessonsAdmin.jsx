@@ -19,7 +19,7 @@ export default function LessonsAdmin() {
 
   const fetchLessons = async () => {
     const res = await axios.get(
-      "http://localhost:8080/api/lessons",
+      "https://796325cefab3.ngrok-free.app/api/lessons",
       getAuthHeaders()
     );
     setLessons(res.data);
@@ -31,7 +31,7 @@ export default function LessonsAdmin() {
 
   const handleDelete = async () => {
     await axios.delete(
-      `http://localhost:8080/api/lessons/${deletingLessonId}`,
+      `https://796325cefab3.ngrok-free.app/api/lessons/${deletingLessonId}`,
       getAuthHeaders()
     );
     setShowDeleteModal(false);

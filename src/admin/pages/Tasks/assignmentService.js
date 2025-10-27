@@ -1,5 +1,5 @@
-const API_URL = "http://localhost:8080/api/assignments";
-const LESSON_API = "http://localhost:8080/api/lessons";
+const API_URL = "https://796325cefab3.ngrok-free.app/api/assignments";
+const LESSON_API = "https://796325cefab3.ngrok-free.app/api/lessons";
 const TOKEN = localStorage.getItem("adminToken");
 
 const authHeader = {
@@ -80,7 +80,7 @@ export const getAssignmentSubmissions = async (assignmentId) => {
 
 // Foydalanuvchi topshirgan javobni holatini yangilash
 export const updateSubmissionStatus = async (submissionId, status) => {
-  const res = await fetch(`http://localhost:8080/api/submissions/${submissionId}/status`, {
+  const res = await fetch(`https://796325cefab3.ngrok-free.app/api/submissions/${submissionId}/status`, {
     method: "PUT",
     headers: {
       ...authHeader,

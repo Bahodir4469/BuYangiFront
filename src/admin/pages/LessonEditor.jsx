@@ -43,8 +43,8 @@ export default function LessonEditor({ lesson, onClose }) {
     const isFileUpload = videoType === "file";
 
     const url = isEditing
-      ? `http://localhost:8080/api/lessons/${lesson.id}`
-      : `http://localhost:8080/api/lessons`;
+      ? `https://796325cefab3.ngrok-free.app/api/lessons/${lesson.id}`
+      : `https://796325cefab3.ngrok-free.app/api/lessons`;
 
     const headers = getAuthHeaders().headers;
 
