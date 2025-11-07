@@ -66,7 +66,7 @@ export default function LessonsAdmin() {
         }}
         className="flex p-6 flex-col gap-4"
       >
-        {lessons.map((lesson, index) => (
+        {!lessons && lessons.map((lesson, index) => (
           <div
             key={lesson.id}
             className="rounded-xl shadow-md p-4 bg-white relative w-full cursor-pointer hover:bg-blue-50 transition"
