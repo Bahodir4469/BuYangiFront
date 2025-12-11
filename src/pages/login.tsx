@@ -67,7 +67,7 @@ const Login = () => {
   const onFinish = async (values) => {
     try {
       if (state === "login") {
-        const res = await axios.post("https://796325cefab3.ngrok-free.app/api/auth/login", {
+        const res = await axios.post("https://2ed321daba78.ngrok-free.app/api/auth/login", {
           login_name: values.username,
           password: values.password,
         });
@@ -100,7 +100,7 @@ const Login = () => {
       } else {
         // Register
         const res = await axios.post(
-          "https://796325cefab3.ngrok-free.app/api/auth/register",
+          "https://2ed321daba78.ngrok-free.app/api/auth/register",
           {
             name: values.name,
             surname: values.surname,

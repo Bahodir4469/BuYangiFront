@@ -14,7 +14,7 @@ const ArticlePage = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const res = await axios.get(`https://796325cefab3.ngrok-free.app/api/articles/${id}`);
+        const res = await axios.get(`https://2ed321daba78.ngrok-free.app/api/articles/${id}`);
         setArticle(res.data);
       } catch (err) {
         console.error("Maqolani olishda xatolik:", err);
@@ -23,7 +23,7 @@ const ArticlePage = () => {
 
     const fetchAllArticles = async () => {
       try {
-        const res = await axios.get(`https://796325cefab3.ngrok-free.app/api/articles`);
+        const res = await axios.get(`https://2ed321daba78.ngrok-free.app/api/articles`);
         setArticles(res.data);
       } catch (err) {
         console.error("Barcha maqolalarni olishda xatolik:", err);
