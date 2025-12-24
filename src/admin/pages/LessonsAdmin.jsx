@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../utils/axios";
 import { Button } from "../../components/Parts/Button2";
 import { Dialog, DialogContent } from "../../components/Parts/Dialog";
 import LessonEditor from "./LessonEditor";
@@ -19,7 +19,7 @@ export default function LessonsAdmin() {
 
   const fetchLessons = async () => {
     const res = await axios.get(
-      "https://2ed321daba78.ngrok-free.app/api/lessons",
+      "/lessons",
       getAuthHeaders()
     );
     setLessons(res.data);
@@ -31,7 +31,7 @@ export default function LessonsAdmin() {
 
   const handleDelete = async () => {
     await axios.delete(
-      `https://2ed321daba78.ngrok-free.app/api/lessons/${deletingLessonId}`,
+      `/lessons/${deletingLessonId}`,
       getAuthHeaders()
     );
     setShowDeleteModal(false);
@@ -66,7 +66,7 @@ export default function LessonsAdmin() {
         }}
         className="flex p-6 flex-col gap-4"
       >
-        {!lessons && lessons.map((lesson, index) => (
+        {lessons && lessons.map((lesson, index) => (
           <div
             key={lesson.id}
             className="rounded-xl shadow-md p-4 bg-white relative w-full cursor-pointer hover:bg-blue-50 transition"

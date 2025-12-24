@@ -6,6 +6,7 @@ import {
   updateTest,
 } from "../../../services/testService";
 import { Input, Button, Select, message } from "antd";
+import axios from "../../../utils/axios";
 import {
   CheckCircleFilled,
   DeleteOutlined,
@@ -41,13 +42,12 @@ export default function TestFormPage() {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("https://796325cefab3.ngrok-free.app/api/lessons", {
+    axios.get("/lessons", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then((res) => res.json())
-      .then((data) => setLessons(data))
+      .then((res) => setLessons(res.data))
       .catch((err) => console.error("Xatolik:", err));
   }, []);
 

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import axios from "axios";
+import axios from "../../utils/axios";
 import { Dialog, DialogContent } from "../../components/Parts/Dialog";
 import { Input } from "../../components/Parts/Input";
 import { Button } from "../../components/Parts/Button2";
@@ -43,8 +43,8 @@ export default function LessonEditor({ lesson, onClose }) {
     const isFileUpload = videoType === "file";
 
     const url = isEditing
-      ? `https://2ed321daba78.ngrok-free.app/api/lessons/${lesson.id}`
-      : `https://2ed321daba78.ngrok-free.app/api/lessons`;
+      ? `/lessons/${lesson.id}`
+      : `/lessons`;
 
     const headers = getAuthHeaders().headers;
 

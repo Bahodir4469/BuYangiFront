@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "./PageHeader";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import axios from "../../utils/axios";
 import { ArrowLeft } from "lucide-react";
 
 export default function AdminArticleForm() {
@@ -21,7 +21,7 @@ export default function AdminArticleForm() {
         try {
           const token = localStorage.getItem("adminToken");
           const res = await axios.get(
-            ` https://2ed321daba78.ngrok-free.app/api/articles/${id}`,
+            `/articles/${id}`,
             {
               headers: { Authorization: `Bearer ${token}` },
             }
@@ -48,14 +48,14 @@ export default function AdminArticleForm() {
     try {
       if (isEdit) {
         await axios.put(
-          ` https://2ed321daba78.ngrok-free.app/api/articles/${id}`,
+          `/articles/${id}`,
           articleData,
           {
             headers: { Authorization: `Bearer ${token}` },
           }
         );
       } else {
-        await axios.post(" https://2ed321daba78.ngrok-free.app/api/articles", articleData, {
+        await axios.post("/articles", articleData, {
           headers: { Authorization: `Bearer ${token}` },
         });
       }

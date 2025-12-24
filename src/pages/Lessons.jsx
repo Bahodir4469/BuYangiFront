@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaBookOpen, FaCalendarAlt } from "react-icons/fa";
 import PageHeader from "../components/PageHeader";
+import axios from "../utils/axios";
 
 const Lessons = () => {
   const [lessons, setLessons] = useState([]);
@@ -10,13 +11,12 @@ const Lessons = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch("https://796325cefab3.ngrok-free.app/api/lessons", {
+    axios.get("/lessons", {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then((res) => res.json())
-      .then((data) => setLessons(data))
+      .then((res) => setLessons(res.data))
       .catch((err) => console.error("Xatolik:", err));
   }, []);
 

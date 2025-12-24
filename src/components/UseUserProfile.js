@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios from '../utils/axios';
 
 const getAuthHeader = () => {
   const token = localStorage.getItem('token');
@@ -10,19 +10,19 @@ const getAuthHeader = () => {
 };
 
 export const getUserProfile = async (userId) => {
-  const res = await axios.get(`https://2ed321daba78.ngrok-free.app/api/users/${userId}`, getAuthHeader());
+  const res = await axios.get(`/users/${userId}`, getAuthHeader());
   return res.data;
 };
 
 export const updateUserProfile = async (userId, updatedData) => {
-  const res = await axios.put(`https://2ed321daba78.ngrok-free.app/api/users/${userId}`, updatedData, getAuthHeader());
+  const res = await axios.put(`/users/${userId}`, updatedData, getAuthHeader());
   return res.data;
 };
 
 export const getAllUsers = async () => {
   const token = localStorage.getItem("adminToken"); // yoki 'accessToken', qanday nomlading
 
-  const res = await axios.get("https://2ed321daba78.ngrok-free.app/api/users", {
+  const res = await axios.get("/users", {
     headers: {
       Authorization: `Bearer ${token}`,
     },

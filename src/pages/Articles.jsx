@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import PageHeader from "../components/PageHeader";
 import ArticleCard from "../components/ArticleCard";
 import RecommendedCard from "../components/RecommendedCard";
-import axios from "axios";
+import axios from "../utils/axios";
 
 const Articles = () => {
   const [articles, setArticles] = useState([]);
@@ -10,7 +10,7 @@ const Articles = () => {
   useEffect(() => {
     const fetchArticles = async () => {
       try {
-        const res = await axios.get("https://2ed321daba78.ngrok-free.app/api/articles");
+        const res = await axios.get("/articles");
         setArticles(res.data);
       } catch (err) {
         console.error("Maqolalarni olishda xatolik:", err);

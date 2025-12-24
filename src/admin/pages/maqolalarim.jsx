@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../utils/axios";
 import PageHeader from "./PageHeader";
 import { useNavigate } from "react-router-dom";
 import { CalendarDays, Pencil, Trash } from "lucide-react";
@@ -13,7 +13,7 @@ export default function AdminArticles() {
 
   const fetchArticles = async () => {
     try {
-      const res = await axios.get("https://2ed321daba78.ngrok-free.app/api/articles", {
+      const res = await axios.get("/articles", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setArticles(res.data);
@@ -34,7 +34,7 @@ export default function AdminArticles() {
   const handleDelete = async () => {
     if (!deleteId) return;
     try {
-      await axios.delete(`https://2ed321daba78.ngrok-free.app/api/articles/${deleteId}`, {
+      await axios.delete(`/articles/${deleteId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setShowModal(false);

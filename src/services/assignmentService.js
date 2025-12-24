@@ -1,6 +1,4 @@
-import axios from "axios";
-
-const BASE_URL = "https://2ed321daba78.ngrok-free.app/api";
+import axios from "../utils/axios";
 
 // Tokenni olish
 const getAuthHeaders = () => {
@@ -12,15 +10,15 @@ const getAuthHeaders = () => {
 
 // 🔹 Barcha topshiriqlarni olish
 export const fetchAssignments = async () => {
-  const res = await axios.get(`${BASE_URL}/assignments`, {
+  const res = await axios.get(`/assignments`, {
     headers: getAuthHeaders(),
   });
   return res.data;
 };
 
-// 🔹 lessonId bo‘yicha darsni olish (hamma darsdan filtr qilinadi)
+// 🔹 lessonId bo'yicha darsni olish (hamma darsdan filtr qilinadi)
 export const fetchLesson = async (lessonId) => {
-  const res = await axios.get(`${BASE_URL}/lessons`, {
+  const res = await axios.get(`/lessons`, {
     headers: getAuthHeaders(),
   });
   const lessons = res.data;
@@ -30,7 +28,7 @@ export const fetchLesson = async (lessonId) => {
 // 🔹 Topshiriqni topshirish (description + file bilan)
 export const submitAssignment = async (assignmentId, data) => {
   const res = await axios.post(
-    `${BASE_URL}/assignments/${assignmentId}/submit`,
+    `/assignments/${assignmentId}/submit`,
     {
       description: data.description,
       fileUrl: data.fileUrl,

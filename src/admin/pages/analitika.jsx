@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import PageHeader from "./PageHeader";
 import { Pencil, Trash } from "lucide-react";
-import axios from "axios";
+import axios from "../../utils/axios";
 import Rasm from "../../assets/Bu icon .png";
 import { Dialog } from "@headlessui/react";
 
@@ -22,7 +22,7 @@ export default function Analitika() {
     const token = localStorage.getItem("adminToken");
 
     axios
-      .get(" https://2ed321daba78.ngrok-free.app/api/users", {
+      .get("/users", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -44,7 +44,7 @@ export default function Analitika() {
   const confirmDelete = async () => {
     const token = localStorage.getItem("adminToken");
     try {
-      await axios.delete(` https://2ed321daba78.ngrok-free.app/api/users/${selectedUser.id}`, {
+      await axios.delete(`/users/${selectedUser.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setUsers(users.filter((u) => u.id !== selectedUser.id));
@@ -69,7 +69,7 @@ export default function Analitika() {
     const token = localStorage.getItem("adminToken");
     try {
       const res = await axios.put(
-        ` https://2ed321daba78.ngrok-free.app/api/users/${selectedUser.id}`,
+        `/users/${selectedUser.id}`,
         editedUser,
         {
           headers: { Authorization: `Bearer ${token}` },

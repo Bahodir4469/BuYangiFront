@@ -4,6 +4,7 @@ import { FaLock, FaPlay } from "react-icons/fa";
 import ReactPlayer from "react-player";
 import { ArrowLeftOutlined, DownloadOutlined } from "@ant-design/icons";
 import Rasm from "../assets/homeuser.png";
+import axios from "../utils/axios";
 
 const CoursePage = () => {
   const { courseId } = useParams();
@@ -15,16 +16,12 @@ const CoursePage = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
 
-    fetch(`https://796325cefab3.ngrok-free.app/api/lessons/${courseId}`, {
+    axios.get(`/lessons/${courseId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
     })
-      .then((res) => {
-        if (!res.ok) throw new Error("Ma'lumot topilmadi");
-        return res.json();
-      })
-      .then((data) => setCourse(data))
+      .then((res) => setCourse(res.data))
       .catch((err) => console.error("Xatolik:", err));
   }, [courseId]);
 

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Button, Checkbox, Form, Input } from "antd";
 import styled from "styled-components";
 import { Navigate, useNavigate } from "react-router-dom";
-import axios from "axios";
+import axios from "../utils/axios";
 import { message } from "antd";
 
 const StyledInput = styled(Input)`
@@ -67,7 +67,7 @@ const Login = () => {
   const onFinish = async (values) => {
     try {
       if (state === "login") {
-        const res = await axios.post("https://2ed321daba78.ngrok-free.app/api/auth/login", {
+        const res = await axios.post("/auth/login", {
           login_name: values.username,
           password: values.password,
         });
@@ -100,7 +100,7 @@ const Login = () => {
       } else {
         // Register
         const res = await axios.post(
-          "https://2ed321daba78.ngrok-free.app/api/auth/register",
+          "/auth/register",
           {
             name: values.name,
             surname: values.surname,

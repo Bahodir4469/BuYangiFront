@@ -1,23 +1,22 @@
-const API_URL = "https://796325cefab3.ngrok-free.app/api/assignments";
-const LESSON_API = "https://796325cefab3.ngrok-free.app/api/lessons";
-const TOKEN = localStorage.getItem("adminToken");
+import axios from "../../../utils/axios";
 
-const authHeader = {
-  Authorization: `Bearer ${TOKEN}`,
+const getAuthHeader = () => {
+  const TOKEN = localStorage.getItem("adminToken");
+  return {
+    Authorization: `Bearer ${TOKEN}`,
+  };
 };
 
 // Barcha topshiriqlarni olish
 export const getAllAssignments = async () => {
-  const res = await fetch(API_URL, { headers: authHeader });
-  if (!res.ok) throw new Error("Topshiriqlarni olishda xatolik");
-  return res.json();
+  const res = await axios.get("/assignments", { headers: getAuthHeader() });
+  return res.data;
 };
 
 // Bitta topshiriqni olish
 export const getAssignmentById = async (id) => {
-  const res = await fetch(`${API_URL}/${id}`, { headers: authHeader });
-  if (!res.ok) throw new Error("Topshiriqni olishda xatolik");
-  return res.json();
+  const res = await axios.get(`/assignments/${id}`, { headers: getAuthHeader() });
+  return res.data;
 };
 
 // Yangi topshiriq yaratish
@@ -27,13 +26,10 @@ export const createAssignment = async (data) => {
   formData.append("description", data.description);
   data.files.forEach((file) => formData.append("files", file));
 
-  const res = await fetch(API_URL, {
-    method: "POST",
-    headers: authHeader,
-    body: formData,
+  const res = await axios.post("/assignments", formData, {
+    headers: getAuthHeader(),
   });
-  if (!res.ok) throw new Error("Yaratishda xatolik");
-  return res.json();
+  return res.data;
 };
 
 // Topshiriqni yangilash
@@ -43,51 +39,44 @@ export const updateAssignment = async (id, data) => {
   formData.append("description", data.description);
   data.files.forEach((file) => formData.append("files", file));
 
-  const res = await fetch(`${API_URL}/${id}`, {
-    method: "PUT",
-    headers: authHeader,
-    body: formData,
+  const res = await axios.put(`/assignments/${id}`, formData, {
+    headers: getAuthHeader(),
   });
-  if (!res.ok) throw new Error("Yangilashda xatolik");
-  return res.json();
+  return res.data;
 };
 
-// Topshiriqni o‘chirish
+// Topshiriqni o'chirish
 export const deleteAssignment = async (id) => {
-  const res = await fetch(`${API_URL}/${id}`, {
-    method: "DELETE",
-    headers: authHeader,
+  const res = await axios.delete(`/assignments/${id}`, {
+    headers: getAuthHeader(),
   });
-  if (!res.ok) throw new Error("O‘chirishda xatolik");
-  return res.json();
+  return res.data;
 };
 
-// Darslar ro‘yxatini olish (assignment yaratishda kerak)
+// Darslar ro'yxatini olish (assignment yaratishda kerak)
 export const getAllLessons = async () => {
-  const res = await fetch(LESSON_API, { headers: authHeader });
-  if (!res.ok) throw new Error("Darslarni olishda xatolik");
-  return res.json();
+  const res = await axios.get("/lessons", { headers: getAuthHeader() });
+  return res.data;
 };
 
 // Foydalanuvchi topshirgan javoblarni olish
 export const getAssignmentSubmissions = async (assignmentId) => {
-  const res = await fetch(`${API_URL}/${assignmentId}/submissions`, {
-    headers: authHeader,
+  const res = await axios.get(`/assignments/${assignmentId}/submissions`, {
+    headers: getAuthHeader(),
   });
-  if (!res.ok) throw new Error("Javoblarni olishda xatolik");
-  return res.json();
+  return res.data;
 };
 
 // Foydalanuvchi topshirgan javobni holatini yangilash
 export const updateSubmissionStatus = async (submissionId, status) => {
-  const res = await fetch(`https://796325cefab3.ngrok-free.app/api/submissions/${submissionId}/status`, {
-    method: "PUT",
-    headers: {
-      ...authHeader,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({ status }),
-  });
-  if (!res.ok) throw new Error("Statusni yangilashda xatolik");
-  return res.json();
+  const res = await axios.put(`/submissions/${submissionId}/status`,
+    { status },
+    {
+      headers: {
+        ...getAuthHeader(),
+        "Content-Type": "application/json",
+      },
+    }
+  );
+  return res.data;
 };

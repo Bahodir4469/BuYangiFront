@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import RecommendedCard from "../components/RecommendedCard";
 import { IoIosArrowBack } from "react-icons/io";
 import { useNavigate, useParams } from "react-router-dom";
-import axios from "axios";
+import axios from "../utils/axios";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 
 const ArticlePage = () => {
@@ -14,7 +14,7 @@ const ArticlePage = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const res = await axios.get(`https://2ed321daba78.ngrok-free.app/api/articles/${id}`);
+        const res = await axios.get(`/articles/${id}`);
         setArticle(res.data);
       } catch (err) {
         console.error("Maqolani olishda xatolik:", err);
@@ -23,7 +23,7 @@ const ArticlePage = () => {
 
     const fetchAllArticles = async () => {
       try {
-        const res = await axios.get(`https://2ed321daba78.ngrok-free.app/api/articles`);
+        const res = await axios.get(`/articles`);
         setArticles(res.data);
       } catch (err) {
         console.error("Barcha maqolalarni olishda xatolik:", err);
