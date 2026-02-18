@@ -68,13 +68,14 @@ export default function Footer() {
             to={"/"}
             className="text-lg font-extrabold lg:text-[32px] md:text-2xl uppercase"
           >
-            Sayt Nomi
+            KOGNITIV BIOLOYIGA
           </Link>
           <p className="text-[15px] lg:text-[20px]">
-            © 2025 Sayt nomi. Barcha huquqlar himoyalangan
+            © 2025 KOGNITIV BIOLOYIGA. Barcha huquqlar himoyalangan
           </p>
         </div>
       </div>
     </footer>
   );
 }
+
