@@ -68,7 +68,7 @@ export default function Footer() {
             to={"/"}
             className="text-lg font-extrabold lg:text-[32px] md:text-2xl uppercase"
           >
-            KOGNITIV BIOLOYIGA
+            KOGNITIV BIOLOGIYA
           </Link>
           <p className="text-[15px] lg:text-[20px]">
             © 2025 KOGNITIV BIOLOYIGA. Barcha huquqlar himoyalangan
