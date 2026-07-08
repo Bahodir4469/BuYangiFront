@@ -28,7 +28,7 @@ export default function About() {
         </div>
         <div className="flex flex-col w-full gap-5 lg:gap-10 md:flex-row md:items-start">
           <div className="h-100 w-full md:w-[285px]">
-            <div className="h-full rounded-[21px] w-full aboutuser max-w-[450px] md:h-[360px] md:w-[285px]" style={{backgroundSize: "500px", backgroundPosition: "-100px"}}></div>
+            <div className="h-full rounded-[21px] w-full aboutuser max-w-[450px] md:h-[360px] md:w-[285px]" style={{backgroundPosition: "center top"}}></div>
           </div>
           <ul className="flex flex-col justify-center lg:gap-5">
             {AboutSkilList.map((item, index) => (
