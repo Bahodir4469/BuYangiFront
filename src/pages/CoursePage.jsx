@@ -166,8 +166,8 @@ const CoursePage = () => {
               className="w-12 h-12 rounded-full object-cover"
             />
             <div>
-              <p className="font-medium">Ismatillayeva Dilfuza</p>
-              <p className="text-sm text-gray-500">Fanlar doktori</p>
+              <p className="font-medium">Nurmatova Shahnoza</p>
+              <p className="text-sm text-gray-500">Boshlang‘ich sinf o‘qituvchisi</p>
             </div>
           </div>
         </div>

@@ -29,22 +29,33 @@ const NavmenuList = [
 ];
 
 const AboutSkilList = [
-  { id: 1, title: "Biologiyani o‘qitish metodigi", icon: Icon },
   {
-    id: 2,
-    title: "10 yildan ortiq o‘qituvchilik va tadqiqot faoliyati",
+    id: 1,
+    title: "Boshlang‘ich ta’lim va sport yo‘nalishi mutaxassisi",
     icon: Icon,
   },
-  { id: 3, title: "Xalqaro ta’lim loyihalarida ishtirok etgan", icon: Icon },
+  {
+    id: 2,
+    title:
+      "Toshkent shahar Avtomobil yo‘llari institutini tamomlagan (2004–2008)",
+    icon: Icon,
+  },
+  {
+    id: 3,
+    title:
+      "O‘zbekiston Milliy pedagogika universiteti — «Boshlang‘ich ta’lim va sport» yo‘nalishi (2019–2022)",
+    icon: Icon,
+  },
   {
     id: 4,
-    title: "Zamonaviy ta’lim texnologiyalari bo‘yicha mukofot sohibi",
+    title:
+      "Osiyo Xalqaro universiteti magistraturasi — «Boshlang‘ich ta’lim va sport» (2022–2024)",
     icon: Icon,
   },
   {
     id: 5,
     title:
-      "Interaktiv testlar va forumlar orqali o‘quv jarayonini rivojlantirgan",
+      "2019-yildan Mirzo Ulug‘bek tumani 121-maktabda boshlang‘ich sinf o‘qituvchisi",
     icon: Icon,
   },
 ];

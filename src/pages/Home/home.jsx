@@ -11,13 +11,13 @@ export default function Home() {
       <div className="flex flex-col h-full justify-around w-[90%] items-center lg:pb-8 lg:pt-8 py-5 xl:pb-16 xl:pt-12 xl:w-[80%]">
         <div className="h-[150px] w-full max-w-[605px] md:h-[285px] self-start">
           <div className="flex h-[150px] w-full gap-[30px] items-center md:h-[285px] userbacground">
-            <div className="h-[130px] w-[130px] homeuser br-50 md:h-[200px] md:w-[200px] ml-4 shrink-0" style={{backgroundPosition: "0px -40px", borderRadius: "50%"}}></div>
+            <div className="h-[130px] w-[130px] homeuser br-50 md:h-[200px] md:w-[200px] ml-4 shrink-0" style={{backgroundPosition: "center top", borderRadius: "50%"}}></div>
             <div className="w-full max-w-[310px]">
               <p className="text-[14px] font-normal md:text-[16px] uppercase">
-                Fanlar Doktori
+                Boshlang‘ich sinf o‘qituvchisi
               </p>
               <h1 className="text-[#13265C] text-[20px] font-semibold md:text-[32px]">
-              Ismatillayeva Dilfuza Botirjonova
+              Nurmatova Shahnoza Saitkarimovna
               </h1>
             </div>
           </div>

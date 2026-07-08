@@ -52,13 +52,13 @@ export default function AdminHome() {
                 className="w-12 h-12 rounded-full"
                 style={{ objectFit: "cover" }}
               />
-            <p>Ismatillayeva Dilfuza</p>
+            <p>Nurmatova Shahnoza</p>
           </button>
         </div>
       </div>
       <div className="w-[80%] mx-auto">
         <p className="text-[#13265C] text-2xl pt-10 pb-10">
-          Hush kelibsiz, Ismatillayeva Dilfuza
+          Hush kelibsiz, Nurmatova Shahnoza
         </p>
 
         <div className="grid grid-cols-3 gap-5">
