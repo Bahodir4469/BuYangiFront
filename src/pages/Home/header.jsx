@@ -28,7 +28,7 @@ export default function Header() {
               to={"/"}
               className="text-[16px] font-extrabold lg:text-[32px] md:text-[24px] uppercase"
             >
-              KOGNITIV BIOLOGIYA
+              JUNIOR CITIZEN SCIENTIST
             </Link>
           </div>
           {/* menu list */}

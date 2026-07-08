@@ -10,13 +10,13 @@ export default function Footer() {
             <div className="flex gap-[82px]">
               <p className="text-[13px] lg:text-[20px]">Manzil:</p>
               <p className="text-[12px] w-auto font-medium lg:text-[20px]">
-                Farg'ona v., Rishton tumani, Oq yer, Navro‘z 1-uy
+                Toshkent sh., Mirzo Ulug‘bek tumani, Qorasu-4, 121-maktab
               </p>
             </div>
             <div className="flex gap-[46px]">
               <p className="text-[13px] lg:text-[20px]">Kontaktlar:</p>
               <p className="text-[12px] font-medium lg:text-[20px]">
-                +998(94) 441-03-11 <br /> t.me/adminusername
+                +998 (__) ___-__-__ <br /> t.me/
               </p>
             </div>
             <div className="flex gap-[48px] items-center">
@@ -54,7 +54,7 @@ export default function Footer() {
 
           <div className="flex md:w-1/2">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48643.606036808866!2d71.22985761465182!3d40.359526740640106!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bbaa16bf676935%3A0xffc68ae8a5075c7!2sRishtan%2C%20Provincia%20de%20Fergan%C3%A1%2C%20Uzbekist%C3%A1n!5e0!3m2!1ses!2s!4v1744303011032!5m2!1ses!2s"
+              src="https://www.google.com/maps?q=121-maktab,+Qorasu-4,+Mirzo+Ulug%27bek+tumani,+Toshkent&output=embed"
               width="600"
               style={{borderRadius: "20px"}}
               allowfullscreen=""
@@ -68,10 +68,10 @@ export default function Footer() {
             to={"/"}
             className="text-lg font-extrabold lg:text-[32px] md:text-2xl uppercase"
           >
-            KOGNITIV BIOLOGIYA
+            JUNIOR CITIZEN SCIENTIST
           </Link>
           <p className="text-[15px] lg:text-[20px]">
-            © 2025 KOGNITIV BIOLOYIGA. Barcha huquqlar himoyalangan
+            © 2026 JUNIOR CITIZEN SCIENTIST. Barcha huquqlar himoyalangan
           </p>
         </div>
       </div>
